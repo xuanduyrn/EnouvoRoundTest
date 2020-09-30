@@ -12,6 +12,8 @@ target 'EnouvoRoundTest' do
 
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'EnouvoRoundTestTests' do
     inherit! :complete
     # Pods for testing

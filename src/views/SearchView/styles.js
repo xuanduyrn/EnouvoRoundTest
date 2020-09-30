@@ -127,7 +127,8 @@ export default StyleSheet.create({
 		backgroundColor: colors.defaultColor,
 		width: '90%',
 		margin: '5%',
-		borderRadius: 4
+		borderRadius: 4,
+		marginBottom: 30
 	},
 	textFindChilCare: {
 		...shareStyle,

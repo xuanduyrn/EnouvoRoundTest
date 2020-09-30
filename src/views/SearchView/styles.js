@@ -96,5 +96,45 @@ export default StyleSheet.create({
 		fontStyle: 'normal',
 		lineHeight: 17.57,
 		letterSpacing: 0.2
+	},
+
+	dropDownContainer: {
+		height: 48,
+		width: '100%'
+	},
+	dropDownStyle: {
+		backgroundColor: colors.whiteColor,
+		borderColor: colors.defaultColor,
+		borderWidth: 1,
+		padding: 0,
+		margin: 0,
+		paddingVertical: 0,
+		paddingHorizontal: 0
+	},
+	dropdownLabelStyle: {
+		fontSize: 14,
+		padding: 5
+	},
+	itemStyleDropDown: {
+		justifyContent: 'flex-start',
+		width: '100%',
+		backgroundColor: colors.whiteColor
+	},
+	buttonChilCare: {
+		height: 48,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: colors.defaultColor,
+		width: '90%',
+		margin: '5%',
+		borderRadius: 4
+	},
+	textFindChilCare: {
+		...shareStyle,
+		fontWeight: '700',
+		fontSize: 14,
+		fontStyle: 'normal',
+		color: colors.whiteColor,
+		marginLeft: 5
 	}
 });

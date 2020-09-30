@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 import styles from './styles';
 import MultiSlider from '../../container/MultiSlider';
@@ -14,7 +15,7 @@ import { BackButton } from '../../container/HeaderButton';
 import { CustomIcon } from '../../container/CustomIcon';
 import { fetchDataSearch, changeDataSearch } from '../../actions/search';
 import { colors } from '../../constants/colors';
-import { optionServices, valueMoneyForTheArea } from '../../utils/configs';
+import { search } from '../../utils/configs';
 
 class SearchView extends Component {
 	static propTypes = {
@@ -34,8 +35,8 @@ class SearchView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			services: optionServices,
-			valuesMoney: valueMoneyForTheArea
+			isVisibleNational: false,
+			isVisibleSort: false
 		};
 	}
 
@@ -65,11 +66,20 @@ class SearchView extends Component {
 		doChangeDataSearch(payload);
 	}
 
+	someDropDownColors = (key, value) => ((search[key] || []).some(s => s.value === value) ? colors.whiteColor : colors.bodyText);
+
 	render() {
-		const { services, valuesMoney } = this.state;
+		const { isVisibleNational, isVisibleSort } = this.state;
 		const { dataSearch } = this.props;
 		const {
-			address, ratingKindiCare, distanceFromHome, cosPerDay, serviceTypes, valueForMoney
+			address,
+			ratingKindiCare,
+			distanceFromHome,
+			cosPerDay,
+			serviceTypes,
+			valueForMoney,
+			nationalQualityStandardRating,
+			sortResultBy
 		} = dataSearch;
 		return (
 			<SafeAreaView style={styles.container}>
@@ -84,7 +94,7 @@ class SearchView extends Component {
 
 					<View style={styles.services}>
 						{
-							services.map((r, index) => {
+							search.optionServices.map((r, index) => {
 								const color = r.id === serviceTypes ? colors.defaultColor : colors.bodyText;
 								return (
 									<View style={styles.viewServices} key={index.toString()}>
@@ -138,7 +148,7 @@ class SearchView extends Component {
 					>
 						<View style={styles.valueForMoney}>
 							{
-								valuesMoney.map((r, index) => {
+								search.valueMoneyForTheArea.map((r, index) => {
 									const backgroundColor = r.id === valueForMoney ? colors.defaultColor : colors.whiteColor;
 									const color = r.id === valueForMoney ? colors.whiteColor : colors.defaultColor;
 									return (
@@ -170,21 +180,79 @@ class SearchView extends Component {
 						/>
 					</ItemFilters>
 
-					<ItemFilters
-						iconName='ic-nqsrating'
-						iconSize={23}
-						title='National Quality Standard Rating'
-					>
-						<Text>select</Text>
-					</ItemFilters>
+					<View style={{ marginBottom: isVisibleNational ? 150 : 0 }}>
+						<ItemFilters
+							iconName='ic-nqsrating'
+							iconSize={23}
+							title='National Quality Standard Rating'
+						>
+							<DropDownPicker
+								items={search.nationalQualityStandardRating}
+								defaultValue={nationalQualityStandardRating}
+								containerStyle={styles.dropDownContainer}
+								isVisible={isVisibleNational}
+								defaultNull
+								zIndex={1000}
+								activeLabelStyle={{
+									...styles.dropdownLabelStyle,
+									color: this.someDropDownColors('nationalQualityStandardRating', nationalQualityStandardRating)
+								}}
+								labelStyle={{
+									...styles.dropdownLabelStyle,
+									color: colors.bodyText
+								}}
+								activeItemStyle={{
+									backgroundColor: colors.defaultColor
+								}}
+								selectedtLabelStyle={{
+									color: 'red'
+								}}
+								itemStyle={styles.itemStyleDropDown}
+								dropDownStyle={styles.dropDownStyle}
+								onChangeItem={item => this.updated(item.value, 'nationalQualityStandardRating')}
+								onOpen={() => this.setState({ isVisibleNational: true })}
+								onClose={() => this.setState({ isVisibleNational: false })}
+							/>
+						</ItemFilters>
+					</View>
 
-					<ItemFilters
-						iconName='ic-sort'
-						iconSize={23}
-						title='Sort Results By'
-					>
-						<Text>select</Text>
-					</ItemFilters>
+					<View style={{ marginBottom: isVisibleSort ? 150 : 20 }}>
+						<ItemFilters
+							iconName='ic-sort'
+							iconSize={23}
+							title='Sort Results By'
+						>
+							<DropDownPicker
+								items={search.sortResult}
+								defaultValue={sortResultBy}
+								containerStyle={styles.dropDownContainer}
+								isVisible={isVisibleSort}
+								defaultNull
+								labelStyle={{
+									...styles.dropdownLabelStyle,
+									color: colors.bodyText
+								}}
+								activeLabelStyle={{
+									...styles.dropdownLabelStyle,
+									color: this.someDropDownColors('sortResult', sortResultBy)
+								}}
+								activeItemStyle={{
+									backgroundColor: colors.defaultColor
+								}}
+								zIndex={1000}
+								itemStyle={styles.itemStyleDropDown}
+								dropDownStyle={styles.dropDownStyle}
+								onChangeItem={item => this.updated(item.value, 'sortResultBy')}
+								onOpen={() => this.setState({ isVisibleSort: true })}
+								onClose={() => this.setState({ isVisibleSort: false })}
+							/>
+						</ItemFilters>
+					</View>
+
+					<TouchableOpacity style={styles.buttonChilCare}>
+						<Text style={styles.textFindChilCare}>Find Childcare</Text>
+					</TouchableOpacity>
+
 				</ScrollView>
 			</SafeAreaView>
 		);

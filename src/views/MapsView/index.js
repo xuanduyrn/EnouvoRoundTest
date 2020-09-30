@@ -62,11 +62,15 @@ class MapsView extends Component {
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
 		const { readyReceipts } = nextProps;
-		const { selectedMarker } = this.state;
+		const { selectedMarker, initialRegion } = this.state;
 		if (readyReceipts.length > 0) {
 			if (!selectedMarker) {
 				this.setState({
-					selectedMarker: readyReceipts[0].id - 1
+					selectedMarker: readyReceipts[0].id,
+					initialRegion: {
+						...initialRegion,
+						...readyReceipts[0]?.coordinate
+					}
 				});
 				this.animateToRegion(readyReceipts);
 			}
@@ -99,7 +103,7 @@ class MapsView extends Component {
 			? readyReceipts
 				.map(r => r.id)
 				.indexOf(selectedMarker)
-			: 0;
+			: 1;
 	}
 
 	onSelectSlider(index, manual) {
@@ -110,7 +114,7 @@ class MapsView extends Component {
 			: null;
 		const region = { ...initialRegion };
 		if (selectedItem && manual) {
-			this.setState({ selectedMarker: selectedItem.id - 1 });
+			this.setState({ selectedMarker: selectedItem.id });
 			const lat = selectedItem.coordinate
 				? parseFloat(selectedItem.coordinate.latitude)
 				: null;
@@ -177,9 +181,9 @@ class MapsView extends Component {
 								<Marker
 									key={index.toString()}
 									coordinate={{ latitude: lat, longitude: lng }}
-									onPress={() => this.setState({ selectedMarker: index })}
+									onPress={() => this.setState({ selectedMarker: item.id })}
 								>
-									<CustomIcon name='ic-pinmap' size={40} color={selectedMarker === index ? colors.defaultColor : colors.bodyText} />
+									<CustomIcon name='ic-pinmap' size={40} color={selectedMarker === item.id ? colors.defaultColor : colors.bodyText} />
 								</Marker>
 							);
 						})

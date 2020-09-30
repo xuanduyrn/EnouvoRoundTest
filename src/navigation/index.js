@@ -11,12 +11,10 @@ const navigatorTheme = {
 	}
 };
 
-const AppNavigation = () => {
-	return (
-		<NavigationContainer theme={navigatorTheme}>
-			<StackNavigator />
-		</NavigationContainer>
-	);
-};
+const AppNavigation = () => (
+	<NavigationContainer theme={navigatorTheme}>
+		<StackNavigator />
+	</NavigationContainer>
+);
 
 export default AppNavigation;

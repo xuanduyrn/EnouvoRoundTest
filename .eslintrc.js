@@ -1,42 +1,42 @@
 module.exports = {
-	'settings': {
+	settings: {
 		'import/resolver': {
-			'node': {
-				'extensions': ['.js', '.ios.js', '.android.js', '.native.js', '.tsx']
+			node: {
+				extensions: ['.js', '.ios.js', '.android.js', '.native.js', '.tsx']
 			}
 		}
 	},
-	'parser': 'babel-eslint',
-	'extends': 'airbnb',
-	'parserOptions': {
-		'sourceType': 'module',
-		'ecmaVersion': 2017,
-		'ecmaFeatures': {
-			'experimentalObjectRestSpread': true,
-			'jsx': true,
-			'legacyDecorators': true
+	parser: 'babel-eslint',
+	extends: 'airbnb',
+	parserOptions: {
+		sourceType: 'module',
+		ecmaVersion: 2017,
+		ecmaFeatures: {
+			experimentalObjectRestSpread: true,
+			jsx: true,
+			legacyDecorators: true
 		}
 	},
-	'plugins': [
+	plugins: [
 		'react',
 		'jsx-a11y',
 		'import',
 		'react-native'
 	],
-	'env': {
-		'browser': true,
-		'commonjs': true,
-		'es6': true,
-		'node': true,
-		'jquery': true
+	env: {
+		browser: true,
+		commonjs: true,
+		es6: true,
+		node: true,
+		jquery: true
 	},
-	'rules': {
+	rules: {
 		'react/jsx-filename-extension': [1, {
-			'extensions': ['.js', '.jsx']
+			extensions: ['.js', '.jsx']
 		}],
 		'react/require-default-props': [0],
 		'react/no-unused-prop-types': [2, {
-			'skipShapeProps': true
+			skipShapeProps: true
 		}],
 		'react/no-did-mount-set-state': 0,
 		'react/no-multi-comp': [0],
@@ -47,7 +47,7 @@ module.exports = {
 		'jsx-a11y/href-no-hash': 0,
 		'import/prefer-default-export': 0,
 		'import/no-cycle': 0,
-		'camelcase': 0,
+		camelcase: 0,
 		'no-underscore-dangle': 0,
 		'no-return-assign': 0,
 		'no-param-reassign': 0,
@@ -89,8 +89,8 @@ module.exports = {
 		'no-unreachable': 2,
 		'no-unused-expressions': 0,
 		'no-unused-vars': [2, {
-			'vars': 'all',
-			'args': 'after-used'
+			vars: 'all',
+			args: 'after-used'
 		}],
 		'max-len': 0,
 		'react/jsx-uses-vars': 2,
@@ -99,32 +99,32 @@ module.exports = {
 		'one-var': [2, 'never'],
 		'no-lonely-if': 2,
 		'no-trailing-spaces': 2,
-		'complexity': [1, 31],
+		complexity: [1, 31],
 		'space-in-parens': [2, 'never'],
 		'space-before-function-paren': [2, 'never'],
 		'space-before-blocks': [2, 'always'],
-		'indent': [2, 'tab', { 'SwitchCase': 1 }],
+		indent: [2, 'tab', { SwitchCase: 1 }],
 		'eol-last': [2, 'always'],
 		'comma-dangle': [2, 'never'],
 		'keyword-spacing': 2,
 		'block-spacing': 2,
-		'brace-style': [2, '1tbs', { 'allowSingleLine': true }],
+		'brace-style': [2, '1tbs', { allowSingleLine: true }],
 		'computed-property-spacing': 2,
 		'comma-spacing': 2,
 		'comma-style': 2,
 		'guard-for-in': 2,
 		'wrap-iife': 2,
 		'block-scoped-var': 2,
-		'curly': [2, 'all'],
-		'eqeqeq': [2, 'allow-null'],
+		curly: [2, 'all'],
+		eqeqeq: [2, 'allow-null'],
 		'new-cap': [2],
 		'use-isnan': 2,
 		'valid-typeof': 2,
 		'linebreak-style': 0,
 		'prefer-template': 2,
 		'template-curly-spacing': [2, 'always'],
-		'quotes': [2, 'single'],
-		'semi': [2, 'always'],
+		quotes: [2, 'single'],
+		semi: [2, 'always'],
 		'prefer-const': 2,
 		'object-shorthand': 2,
 		'consistent-return': 0,
@@ -134,7 +134,7 @@ module.exports = {
 		'require-await': 2,
 		'func-names': 0,
 		'react/sort-comp': ['error', {
-			'order': [
+			order: [
 				'static-variables',
 				'static-methods',
 				'lifecycle',
@@ -150,7 +150,7 @@ module.exports = {
 		'no-async-promise-executor': [0],
 		'max-classes-per-file': [0]
 	},
-	'globals': {
-		'__DEV__': true
+	globals: {
+		__DEV__: true
 	}
 };

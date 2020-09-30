@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, Text } from 'react-native';
 
 export default function ApplicationView() {
-  return (
-    <View>
-      <Text>Application View</Text>
-    </View>
-  )
+	return (
+		<View>
+			<Text>Application View</Text>
+		</View>
+	);
 }

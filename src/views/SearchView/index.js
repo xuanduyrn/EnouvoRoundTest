@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 
+import { CustomIcon } from '../../container/CustomIcon';
 import { exampleFunc } from '../../actions/searchExample';
 
 const SearchView = ({
 	objectExample,
 	fetchExampleOject
 }) => {
-
 	React.useEffect(() => {
 		fetchExampleOject();
 	}, []);
@@ -17,7 +17,8 @@ const SearchView = ({
 	return (
 		<View>
 			<Text>Screen Search Filter</Text>
-			<Text>{`data: ${ JSON.stringify(objectExample)}`}</Text>
+			<Text>{`data: ${ JSON.stringify(objectExample) }`}</Text>
+			<CustomIcon name='ic-2pinmap' size={30} />
 		</View>
 	);
 };

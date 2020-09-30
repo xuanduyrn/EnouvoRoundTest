@@ -2,27 +2,36 @@ import * as types from '../actions/actionTypes';
 
 const initialState = {
 	isFetching: false,
-	objectExample: {}
+	dataSearch: {}
 };
 
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
-		case types.SEARCH.EXAMPLE_SEARCH_REQUEST:
+		case types.SEARCH.FETCH_DATA_SEARCH_REQUEST:
 			return {
 				...state,
 				isFetching: true
 			};
-		case types.SEARCH.EXAMPLE_SEARCH_SUCCESS:
+		case types.SEARCH.FETCH_DATA_SEARCH_SUCCESS:
 			return {
 				...state,
 				isFetching: false,
-				objectExample: action.dataExample
+				dataSearch: action.dataSearch
 			};
-		case types.SEARCH.EXAMPLE_SEARCH_FAILED:
+		case types.SEARCH.FETCH_DATA_SEARCH_FAILED:
 			return {
 				...state,
 				isFetching: false,
-				objectExample: {}
+				dataSearch: {}
+			};
+
+		case types.SEARCH.UPDATED_DATA_SEARCH:
+			return {
+				...state,
+				dataSearch: {
+					...state.dataSearch,
+					[action?.payload?.key]: action?.payload?.value
+				}
 			};
 		default:
 			return state;

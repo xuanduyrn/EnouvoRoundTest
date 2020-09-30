@@ -1,15 +1,15 @@
 import {
 	put, takeLatest
 } from 'redux-saga/effects';
+import { dataSearch } from '../mock-data/search';
 import * as types from '../actions/actionTypes';
 
-function* exampleFunc() {
-	const dataExample = { name: 'duypx', age: 24, role: 'developer' };
-	yield put({ type: types.SEARCH.EXAMPLE_SEARCH_SUCCESS, dataExample });
+function* fetchDataSearch() {
+	yield put({ type: types.SEARCH.FETCH_DATA_SEARCH_SUCCESS, dataSearch });
 }
 
 function* runner() {
-	yield takeLatest(types.SEARCH.EXAMPLE_SEARCH_REQUEST, exampleFunc);
+	yield takeLatest(types.SEARCH.FETCH_DATA_SEARCH_REQUEST, fetchDataSearch);
 }
 
 export default runner;

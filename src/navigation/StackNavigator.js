@@ -12,6 +12,7 @@ const StackNavigator = () => ((
 		<Stack.Screen
 			name='Search'
 			component={Search}
+			options={Search.navigationOptions}
 		/>
 		<Stack.Screen
 			name='Maps'

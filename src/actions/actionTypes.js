@@ -5,7 +5,9 @@ function createRequestTypes(base, types) {
 }
 
 export const SEARCH = createRequestTypes('SEARCH', [
-	'EXAMPLE_SEARCH_REQUEST',
-	'EXAMPLE_SEARCH_SUCCESS',
-	'EXAMPLE_SEARCH_FAILED'
+	'FETCH_DATA_SEARCH_REQUEST',
+	'FETCH_DATA_SEARCH_SUCCESS',
+	'FETCH_DATA_SEARCH_FAILED',
+
+	'UPDATED_DATA_SEARCH'
 ]);

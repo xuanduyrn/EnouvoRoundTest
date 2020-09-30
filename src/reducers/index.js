@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import search from './search';
+import maps from './maps';
 
 const appReducer = combineReducers({
-	search
+	search,
+	maps
 });
 
 const rootReducer = (state, action) => appReducer(state, action);

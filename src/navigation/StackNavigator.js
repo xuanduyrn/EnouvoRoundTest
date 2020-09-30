@@ -11,6 +11,11 @@ const Stack = createStackNavigator();
 const StackNavigator = () => ((
 	<Stack.Navigator>
 		<Stack.Screen
+			name='Maps'
+			component={MapsView}
+			options={MapsView.navigationOptions}
+		/>
+		<Stack.Screen
 			name='Home'
 			component={HomeView}
 		/>
@@ -18,10 +23,6 @@ const StackNavigator = () => ((
 			name='Search'
 			component={Search}
 			options={Search.navigationOptions}
-		/>
-		<Stack.Screen
-			name='Maps'
-			component={MapsView}
 		/>
 		<Stack.Screen
 			name='Applications'

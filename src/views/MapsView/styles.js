@@ -11,5 +11,11 @@ export default StyleSheet.create({
 		left: 0,
 		right: 0,
 		bottom: 0
+	},
+	carouselContainer: {
+		position: 'absolute',
+		bottom: 20,
+		left: 0,
+		right: 0,
 	}
 });

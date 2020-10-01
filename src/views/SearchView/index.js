@@ -20,6 +20,7 @@ import { search } from '../../utils/configs';
 class SearchView extends Component {
 	static propTypes = {
 		dataSearch: PropTypes.object,
+		navigation: PropTypes.object,
 		doGetDataSearch: PropTypes.func,
 		doChangeDataSearch: PropTypes.func
 	}
@@ -70,7 +71,7 @@ class SearchView extends Component {
 
 	render() {
 		const { isVisibleNational, isVisibleSort } = this.state;
-		const { dataSearch } = this.props;
+		const { dataSearch, navigation } = this.props;
 		const {
 			address,
 			ratingKindiCare,
@@ -249,7 +250,10 @@ class SearchView extends Component {
 						</ItemFilters>
 					</View>
 
-					<TouchableOpacity style={styles.buttonChilCare}>
+					<TouchableOpacity
+						style={styles.buttonChilCare}
+						onPress={() => navigation.navigate('Applications')}
+					>
 						<Text style={styles.textFindChilCare}>Find Childcare</Text>
 					</TouchableOpacity>
 

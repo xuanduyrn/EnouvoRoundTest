@@ -17,3 +17,12 @@ export const MAPS = createRequestTypes('MAPS', [
 	'FETCH_DATA_MAPS_SUCCESS',
 	'FETCH_DATA_MAPS_FAILED'
 ]);
+
+export const APPLICATION = createRequestTypes('APPLICATION', [
+	'FETCH_DATA_APP_REQUEST',
+	'FETCH_DATA_APP_SUCCESS',
+	'FETCH_DATA_APP_FAILED',
+
+	'UPDATED_DATA_APP',
+	'CREATE_DATA_APP'
+]);

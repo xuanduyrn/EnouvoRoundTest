@@ -7,6 +7,7 @@ import {
 import OrderHeader from './OrderHeader';
 import OrderInfo from './OrderInfo';
 import { colors } from '../../constants/colors';
+import activeOpacity from '../../constants/activeOpacity';
 
 const styles = StyleSheet.create({
 	container: {
@@ -32,7 +33,7 @@ const OrderItem = React.memo(({
 }) => (
 	<TouchableOpacity
 		style={[styles.container, { height }]}
-		activeOpacity={0.8}
+		activeOpacity={activeOpacity}
 		onPress={onPress}
 	>
 		<OrderHeader

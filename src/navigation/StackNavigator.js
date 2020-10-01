@@ -28,6 +28,7 @@ const StackNavigator = () => ((
 		<Stack.Screen
 			name='Applications'
 			component={ApplicationView}
+			options={ApplicationView.navigationOptions}
 		/>
 	</Stack.Navigator>
 ));

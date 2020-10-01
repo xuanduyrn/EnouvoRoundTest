@@ -18,24 +18,6 @@ export const readyReceipts = [
 		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
 	},
 	{
-		id: 2,
-		title: 'Bảo tàng Điêu khắc Chăm Đà Nẵng',
-		coordinate: {
-			latitude: 16.0685406,
-			longitude: 108.209956,
-			nearbyText: 'Số 02 Đ. 2 Tháng 9, Bình Hiên, Hải Châu, Đà Nẵng 550000, Việt Nam'
-		},
-		subTitle: 'Excellent',
-		heart: false,
-		featured: {
-			point: 41.2,
-			text: 'Featured'
-		},
-		money: 47,
-		image: 'https://lh5.googleusercontent.com/p/AF1QipOOWSo_eehr-4mfiBWl9SzhQp5uvXt6VO8VmYlR=w408-h544-k-no',
-		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
-	},
-	{
 		id: 3,
 		title: 'Việt Hương',
 		coordinate: {
@@ -51,42 +33,6 @@ export const readyReceipts = [
 		},
 		money: 87,
 		image: 'https://sonaschildcare.com.au/wp-content/uploads/2016/04/sonas-child-care_02-1024x512.jpg',
-		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
-	},
-	{
-		id: 4,
-		title: 'Kid On Lincoln',
-		coordinate: {
-			latitude: 16.0730751,
-			longitude: 108.1751293,
-			nearbyText: 'Tổ 41, Phường Thanh Khê Tây, Quận Thanh Khê, Thanh Khê Tây, Thanh Khê, Đà Nẵng, Việt Nam'
-		},
-		subTitle: 'Excellent',
-		heart: true,
-		featured: {
-			point: 74.8,
-			text: 'Featured'
-		},
-		money: 174,
-		image: 'https://lh5.googleusercontent.com/p/AF1QipNsAUxWhJKIumb6A_nCZcHC8H_EtapTrcl-XAw=w408-h306-k-no',
-		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
-	},
-	{
-		id: 5,
-		title: 'Nobipet',
-		coordinate: {
-			latitude: 16.0635641,
-			longitude: 108.1825403,
-			nearbyText: 'Hòa Khê, Thanh Khê Đông, Thanh Khê, Đà Nẵng 550000, Việt Nam'
-		},
-		subTitle: 'Excellent',
-		heart: true,
-		featured: {
-			point: 12.5,
-			text: 'Featured'
-		},
-		money: 74,
-		image: 'https://lh5.googleusercontent.com/p/AF1QipNZtgQ-6-81mcGVrcEG1EMftfbv6m7qJmpwAgJv=w408-h372-k-no',
 		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
 	},
 	{
@@ -141,24 +87,6 @@ export const readyReceipts = [
 		},
 		money: 74,
 		image: 'https://lh5.googleusercontent.com/p/AF1QipNZtgQ-6-81mcGVrcEG1EMftfbv6m7qJmpwAgJv=w408-h372-k-no',
-		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
-	},
-	{
-		id: 9,
-		title: 'Bệnh viện Đa khoa Gia Đình Đà Nẵng',
-		coordinate: {
-			latitude: 16.0488359,
-			longitude: 108.2078259,
-			nearbyText: '73 Nguyễn Hữu Thọ, Hòa Thuận Nam, Hải Châu, Đà Nẵng 550000, Việt Nam'
-		},
-		subTitle: 'Excellent',
-		heart: true,
-		featured: {
-			point: 12.5,
-			text: 'Featured'
-		},
-		money: 74,
-		image: 'https://lh5.googleusercontent.com/p/AF1QipOPLKdcdz8M3fK12Nvxwh6kAh4CP7rBWHjJrkHB=w408-h271-k-no',
 		icon: 'https://toplist.vn/images/800px/cong-ty-thiet-ke-logo-tai-da-nang-uy-tin-nhat-151759.jpg'
 	},
 	{

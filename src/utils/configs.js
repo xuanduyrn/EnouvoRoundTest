@@ -1,16 +1,18 @@
+import moment from 'moment';
+
 export const search = {
 	optionServices: [
 		{
-			id: 1, name: 'Child care centre', iconName: 'ic-baby'
+			id: 1, name: 'Child care centre', iconName: 'ic-baby', amount: '110$'
 		},
 		{
-			id: 2, name: 'Pre-school & Kindergarten', iconName: 'ic-abc'
+			id: 2, name: 'Pre-school & Kindergarten', iconName: 'ic-abc', amount: '140$'
 		},
 		{
-			id: 3, name: 'Family Day Care', iconName: 'ic-family'
+			id: 3, name: 'Family Day Care', iconName: 'ic-family', amount: '270$'
 		},
 		{
-			id: 4, name: 'Before & After School Care', iconName: 'ic-bag'
+			id: 4, name: 'Before & After School Care', iconName: 'ic-bag', amount: '299$'
 		}
 	],
 
@@ -36,3 +38,6 @@ export const search = {
 		{ value: 6, label: 'Date Of Rating' }
 	]
 };
+
+// eslint-disable-next-line prefer-spread
+export const weekdays = Array.apply(null, Array(7)).map((_, i) => moment(i, 'e').startOf('week').isoWeekday(i + 1).format('ddd'));

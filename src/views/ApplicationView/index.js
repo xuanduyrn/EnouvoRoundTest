@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
 	},
 	textAddChilCare: {
 		fontWeight: '600',
+		textDecorationLine: 'underline',
+		textDecorationColor: colors.defaultColor,
 		fontSize: 14,
 		color: colors.defaultColor
 	},

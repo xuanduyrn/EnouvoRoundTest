@@ -76,7 +76,7 @@ const OrderInfo = React.memo(({
 				name='ic-pinmap'
 				color={colors.defaultColor}
 			/>
-			<Text style={styles.textSubInfo} numberOfLines={2}>{coordinate?.nearbyText}</Text>
+			<Text style={styles.textSubInfo} numberOfLines={1}>{coordinate?.nearbyText}</Text>
 		</View>
 		<View style={styles.cardSubInfo}>
 			<CustomIcon
